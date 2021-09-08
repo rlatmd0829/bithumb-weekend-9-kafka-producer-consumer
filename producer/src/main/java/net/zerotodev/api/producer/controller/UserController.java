@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
+    //예제
     private final KafkaTemplate<String, User> kafkaTemplate;
 
     private static final String TOPIC = "kafka-spring-producer";
@@ -23,6 +23,7 @@ public class UserController {
         user.setEmail(name+"@test.com");
         kafkaTemplate.send(TOPIC, user);
         return "Message Published Successfully";
+
     }
 
 
