@@ -1,0 +1,11 @@
+spring:
+  kafka:
+    admin:
+      properties:
+        spring:
+          json:
+            value.default.type: net.zerotodev.api.consumer.domain.User
+  application:
+    name: kafka-consumer
+server:
+  port: 9091
