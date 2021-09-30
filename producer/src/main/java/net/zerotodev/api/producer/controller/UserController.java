@@ -46,10 +46,10 @@ public class UserController{
 
 
 
-        JSONObject beforeCoin1 = new JSONObject();
-        beforeCoin1.put("name", "BTC");
-        beforeCoin1.put("coinQuantity", 2.2);
-        beforeCoin1.put("avgPrice", 10000);
+//        JSONObject beforeCoin1 = new JSONObject();
+//        beforeCoin1.put("name", "BTC");
+//        beforeCoin1.put("coinQuantity", 2.2);
+//        beforeCoin1.put("avgPrice", 10000);
 
         JSONObject beforeCoin2 = new JSONObject();
         beforeCoin2.put("name", "ETH");
@@ -57,7 +57,7 @@ public class UserController{
         beforeCoin2.put("avgPrice", 15000);
 
         JSONArray beforeCoins = new JSONArray();
-        beforeCoins.add(beforeCoin1);
+        //beforeCoins.add(beforeCoin1);
         beforeCoins.add(beforeCoin2);
 
         JSONObject before = new JSONObject();
@@ -66,10 +66,10 @@ public class UserController{
 
         ////////////////////////////////////
 
-        JSONObject afterCoin1 = new JSONObject();
-        afterCoin1.put("name", "BTC");
-        afterCoin1.put("coinQuantity", 3.0);
-        afterCoin1.put("avgPrice", 7500);
+//        JSONObject afterCoin1 = new JSONObject();
+//        afterCoin1.put("name", "BTC");
+//        afterCoin1.put("coinQuantity", 3.0);
+//        afterCoin1.put("avgPrice", 7500);
 
         JSONObject afterCoin2 = new JSONObject();
         afterCoin2.put("name", "ETH");
@@ -77,12 +77,12 @@ public class UserController{
         afterCoin2.put("avgPrice", 15000);
 
         JSONArray afterCoins = new JSONArray();
-        afterCoins.add(afterCoin1);
+        //afterCoins.add(afterCoin1);
         afterCoins.add(afterCoin2);
 
         JSONObject after = new JSONObject();
         after.put("coins",afterCoins);
-        after.put("totalKRW",20000);
+        after.put("totalKRW",24000);
 
         //////////////////////////////////////
 
@@ -95,6 +95,7 @@ public class UserController{
         System.out.println(rjson.toJSONString());
         //kafkaTemplate.send(TOPIC, rjson);
         kafkaConfiguration.kafkaTemplate().send(TOPIC, rjson);
+        //System.out.println(0.1 + 0.2);
         return "Message Published Successfully";
 
     }
